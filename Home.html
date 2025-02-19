@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.logo{
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 120px;
+  height: 65px;
+  border: 2px solid black;
+  margin-left: 70px;
+  background-color: white;
+}
+.logo img{
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 60px;
+  height: 40px;
+}
+.cuslogo{
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 120px;
+  height: 65px;
+  border: 2px solid black;
+  margin-left: 600px;
+  background-color: white;
+}
+.cuslogo img{
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 60px;
+  height: 35px;
+}
+.navbar{
+    background-color:  rgb(29, 103, 193);
+    height: 60px;
+}
+.sidebar{
+    /* position: fixed; */
+    width: 250px;
+    height: 100vh;
+}
+.line{
+    margin-left: 330px;
+    margin-top: 60px;
+    background-color: rgb(29, 189, 152);
+    width: 4px;
+    height: 150px;
+}
+.text pre{
+    margin-left: -50px;
+    color: rgb(29, 103, 193);
+    width: 400px;
+    font-size: 30px;
+    font-family: cursive;
+}
+#btn{
+    background-color:  rgb(29, 103, 193);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 360px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+}
+.sidebar {
+            width: 250px;
+            height: calc(100vh - 90px);
+            position: fixed;
+            top: 60px;
+            left: 0;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            padding-top: 10px;
+        }
+        .accordion-item {
+            font-size: 12px;
+        }
+.elephant img{
+    width: 250px;
+    height: 250px;
+    margin-top: -180px;
+    margin-left: 850px;
+}
+.grass{
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 247px;
+}
+.grass img{
+    width: 1050px;
+}
+.footer {
+            background-color: rgb(29, 103, 193);
+            width: 100%;
+            height: 30px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            color: white;
+            font-size: small;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+.footer p{
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: small;
+}
+.toggle{
+    margin-bottom: 8px;
+    margin-left: 100px;
+}
+.toggle img{
+    width: 20px;
+    height: 20px;
+}
+.profile{
+    margin-left: 30px;
+}
+.profile img{
+    width: 30px;
+    height: 30px;
+}
+.screen{
+    margin-left: 30px;
+}
+.screen img{
+    width: 30px;
+    height: 30px;
+}
+    </style>
+</head>
+<body>
+   <div class="navbar navbar-expand-lg navbar-primary">
+    <div class="logo">
+        <img src="./images/img/img/logo.png" alt="">
+    </div>
+      <div class="toggle">
+        <img src="./images/img/img/menu-icon.png" alt="">
+      </div>
+      <div class="cuslogo">
+          <img src="./images/img/img/customer_logo.png" alt="">
+      </div>
+      <div class="profile">
+        <img src="./images/img/img/profile.png" alt="">
+        <img src="./images/img/img/caret-down.png" id="arrow" alt="">
+      </div>
+      <div class="screen">
+        <img src="./images/img/img/full-screen.png" alt="">
+      </div>
+   </div>
+   <div class="sidebar">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Data Modeling
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Import Master Data</li>
+                    <li class="list-group-item">Source Files</li>
+                    <li class="list-group-item">Source Systems</li>
+                    <li class="list-group-item">Data Profiling</li>
+                    <li class="list-group-item">Data Extraction</li>
+                    <li class="list-group-item">DSW</li>
+                    <li class="list-group-item">Mapping</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Data Gov Modelling
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Data Gov form Design
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Data Gov Process Modelling
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Data Gov Rules
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Data Governance
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Data Governance Reports
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Data Replication or Transfer
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Job Scheduling
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Configuration
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Dynamic Form Design
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+          </div>
+          
+      </div>
+   </div>
+   <div class="line">
+    <div class="text">
+    <pre>
+        Avoid tricky approches
+        our intelligent
+        business IT solutions
+    </pre>
+   </div>
+   </div>
+   <div class="learn">
+    <button id="btn">Learn More</button>
+   </div>
+   <div class="elephant">
+        <img src="./images/img/img/elephant-bg.png" alt="">
+   </div>
+   <div class="grass">
+        <img src="./images/img/img/body-btm-bg-1100px.png" alt="">
+   </div>
+   <div class="footer">
+        <p>@Copyright to Nexoft PVT LTD</p>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
