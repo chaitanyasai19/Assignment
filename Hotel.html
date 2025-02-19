@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ff5733;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .hero {
+            background-image: url('restaurant.jpg');
+            height: 200px;
+            background-size: cover;
+            color: black;
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        .menu {
+            background-color: #e0e0e0;
+            padding: 20px;
+            margin-top: -100px;
+        }
+        .menu h2 {
+            margin-bottom: 15px;
+        }
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .menu-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+        .about {
+            background-color: #f4f4f4;
+            padding: 30px;
+            margin-top: 0;
+        }
+        .contact {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 0;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact input, .contact textarea {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact button {
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: #e04e28;
+        }
+    </style>
+</head>
+<body>
+    <header>ACN'S Foodeliciou'S</header>
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="hero">Welcome to ACN'S Foodeliciou'S</div>
+
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">🍕 Pizza - $10</div>
+            <div class="menu-item">🍔 Burger - $8</div>
+            <div class="menu-item">🥗 Salad - $7</div>
+            <div class="menu-item">🍝 Pasta - $12</div>
+            <div class="menu-item">🥩 Steak - $20</div>
+            <div class="menu-item">🍣 Sushi - $15</div>
+            <div class="menu-item">🍰 Cheesecake - $6</div>
+            <div class="menu-item">🌮 Tacos - $9</div>
+            <div class="menu-item">🍜 Ramen - $14</div>
+            <div class="menu-item">🥪 Sandwich - $7</div>
+            <div class="menu-item">🍩 Donuts - $5</div>
+            <div class="menu-item">🍦 Ice Cream - $4</div>
+            <div class="menu-item">☕ Coffee - $3</div>
+            <div class="menu-item">🍹 Smoothie - $5</div>
+            <div class="menu-item">🥤 Soft Drinks - $2</div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Delicious Bites, we are committed to serving fresh, high-quality meals made with the finest ingredients. Our menu is carefully crafted to bring you a variety of flavors that cater to different tastes and preferences.</p>
+        <p>We believe that dining is more than just food—it's an experience. Our welcoming atmosphere and friendly service ensure that every visit is enjoyable. Whether you're here for a casual bite or a special occasion, we strive to make it memorable.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <input type="text" name="first-name" placeholder="First Name" required>
+            <input type="text" name="last-name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>© 2025 ACN'S Foodeliciou'S. All rights reserved.</footer>
+</body>
+</html>

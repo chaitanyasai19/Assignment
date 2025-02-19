@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ff5733;
+            color: white;
+        }
+        .search-box {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pagination {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .pagination button {
+            padding: 12px 18px;
+            font-size: 16px;
+            border: none;
+            background-color: #ff5733;
+            color: white;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .pagination button:hover {
+            background-color: #e04e28;
+            transform: scale(1.1);
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+        #pageNumber {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Data Table</h2>
+    <input type="text" id="search" class="search-box" onkeyup="searchTable()" placeholder="Search records...">
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)" disabled>⬅️ Previous</button>
+        <span id="pageNumber">1</span>
+        <button id="nextPage" onclick="changePage(1)">Next ➡️</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const recordsPerPage = 10;
+        let filteredData = [];
+
+        const names = [
+            "Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "Elijah", "Sophia", "James", "Isabella",
+            "William", "Charlotte", "Benjamin", "Amelia", "Lucas", "Mia", "Henry", "Harper", "Alexander", "Evelyn",
+            "Daniel", "Abigail", "Michael", "Ella", "Matthew", "Scarlett", "Ethan", "Grace", "Joseph", "Lily",
+            "Samuel", "Hannah", "David", "Aria", "Jackson", "Chloe", "Sebastian", "Zoey", "Aiden", "Penelope",
+            "Owen", "Layla", "John", "Riley", "Wyatt", "Victoria", "Jack", "Nora", "Luke", "Luna",
+            "Gabriel", "Eleanor", "Anthony", "Hazel", "Isaac", "Aurora", "Dylan", "Savannah", "Grayson", "Addison",
+            "Leo", "Brooklyn", "Jayden", "Bella", "Julian", "Willow", "Hudson", "Lucy", "Nathan", "Paisley",
+            "Caleb", "Natalie", "Christian", "Eliana", "Hunter", "Aubrey", "Isaiah", "Autumn", "Thomas", "Leah",
+            "Aaron", "Stella", "Lincoln", "Ellie", "Christopher", "Skylar", "Joshua", "Violet", "Andrew", "Claire",
+            "Ryan", "Lillian", "Jaxon", "Madison", "Roman", "Zoe", "Eli", "Delilah", "Adam", "Maya"
+        ];
+
+        const cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", 
+                        "San Antonio", "San Diego", "Dallas", "San Jose"];
+
+        // Generate 100 unique records
+        const data = names.map((name, index) => ({
+            id: index + 1,
+            name: name,
+            age: Math.floor(Math.random() * (60 - 18 + 1)) + 18, // Random age between 18 and 60
+            city: cities[index % cities.length]
+        }));
+
+        function displayTable(page) {
+            const tbody = document.querySelector("#dataTable tbody");
+            tbody.innerHTML = "";
+
+            const start = (page - 1) * recordsPerPage;
+            const end = start + recordsPerPage;
+            const paginatedData = filteredData.slice(start, end);
+
+            paginatedData.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${row.id}</td><td>${row.name}</td><td>${row.age}</td><td>${row.city}</td>`;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById("pageNumber").innerText = page;
+            document.getElementById("prevPage").disabled = page === 1;
+            document.getElementById("nextPage").disabled = end >= filteredData.length;
+        }
+
+        function searchTable() {
+            const searchInput = document.getElementById("search").value.toLowerCase();
+            filteredData = data.filter(row =>
+                row.name.toLowerCase().includes(searchInput) ||
+                row.city.toLowerCase().includes(searchInput) ||
+                row.age.toString().includes(searchInput) ||
+                row.id.toString().includes(searchInput)
+            );
+
+            currentPage = 1;
+            displayTable(currentPage);
+        }
+
+        function changePage(step) {
+            currentPage += step;
+            displayTable(currentPage);
+        }
+
+        filteredData = [...data];
+        displayTable(currentPage);
+    </script>
+
+</body>
+</html>
